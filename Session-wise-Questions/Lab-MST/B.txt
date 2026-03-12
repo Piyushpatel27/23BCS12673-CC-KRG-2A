@@ -1,0 +1,26 @@
+Pseudocode
+
+function maxSum(nums, k):
+
+    bitCount[32] = {0}
+
+    for num in nums
+        for bit = 0 → 30
+            if num & (1<<bit)
+                bitCount[bit]++
+
+    ans = 0
+
+    repeat k times
+
+        value = 0
+
+        for bit = 30 → 0
+            if bitCount[bit] > 0
+                value |= (1<<bit)
+                bitCount[bit]--
+
+        ans += value * value
+        ans %= MOD
+
+    return an
