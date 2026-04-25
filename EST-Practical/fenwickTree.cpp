@@ -32,6 +32,17 @@ public:
     }
 };
 
-int main(){
-    
+int main() {
+    int n = 5;
+    Fenwick ft(n);
+
+    ft.update(1, 5);
+    ft.update(2, 3);
+    ft.update(3, 2);
+    ft.update(5, 10);
+
+    cout << ft.rangeQuery(1, 3) << endl;
+    cout << ft.rangeQuery(2, 5) << endl;
+
+    return 0;
 }
